@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Personal Portfolio Website" />
+  <title>Jaffar's Portfolio</title>
+  <style>
+    /* ======= CSS STYLING (same as before, with minor tweaks) ======= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .hero {
+      background-color: #3498db;
+      color: white;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .container img {
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2980b9;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    h2, h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+
+    /* Hide all sections by default */
+    section {
+      display: none;
+    }
+
+    /* Show only active section */
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>JAHLIL</h1>
+    <nav>
+      <ul>
+        <li><a onclick="showSection('home')">Home</a></li>
+        <li><a onclick="showSection('about')">About</a></li>
+        <li><a onclick="showSection('meal1')">Spaghetti Carbonara</a></li>
+        <li><a onclick="showSection('meal2')">Chicken Biryani</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="active">
+    <div class="hero">
+      <h2>Welcome to my page!!</h2>
+    </div>
+    <div class="container">
+      <p>Hi, I'm <strong>Jaffar Khalif</strong>, a web development enthusiast who loves coding, cooking, and creativity.</p>
+      <span class="btn" onclick="showSection('about')">Learn More About Me</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <img src="jaffar.jpeg" alt="Profile Photo" width="150" />
+      <p>I'm passionate about web development, design, and learning new things. Outside of tech, I enjoy cooking, hiking, and photography.</p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <h3>Fun Facts</h3>
+      <ul>
+        <li>I can cook pasta in 5 ways 🍝</li>
+        <li>I love hiking and nature trails 🥾</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meal 1 Section: Spaghetti Carbonara -->
+  <section id="meal1">
+    <div class="container">
+      <h2>Spaghetti Carbonara</h2>
+      <img src="sphaghetti.jpeg" alt="Spaghetti Carbonara">
+      
+      <h3>Ingredients</h3>
+      <ul>
+        <li>Spaghetti</li>
+        <li>Eggs</li>
+        <li>Pancetta or Bacon</li>
+        <li>Parmesan Cheese</li>
+        <li>Black Pepper</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Boil the spaghetti until al dente.</li>
+        <li>Fry pancetta until crispy.</li>
+        <li>Whisk eggs with grated cheese.</li>
+        <li>Mix hot pasta with egg-cheese mixture and pancetta.</li>
+        <li>Serve with extra cheese and pepper.</li>
+      </ol>
+
+      <h3>Nutritional Info (approx.)</h3>
+      <p>Calories: 500 | Protein: 20g | Fat: 18g | Carbs: 60g</p>
+    </div>
+  </section>
+
+  <!-- Meal 2 Section: Chicken Biryani -->
+  <section id="meal2">
+    <div class="container">
+      <h2>Chicken Biryani</h2>
+      <img src="biryani.jpg" alt="Chicken Biryani">
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>Chicken (cut into pieces)</li>
+        <li>Long-grain basmati rice</li>
+        <li>Yogurt</li>
+        <li>Onions</li>
+        <li>Tomatoes</li>
+        <li>Ginger & Garlic paste</li>
+        <li>Spices: Garam masala, cumin, coriander, cardamom</li>
+        <li>Mint leaves</li>
+        <li>Fresh coriander leaves</li>
+        <li>Fried onions (for garnish)</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Marinate the chicken in yogurt, ginger-garlic paste, and spices for at least an hour.</li>
+        <li>Fry sliced onions in oil until golden brown, then set aside.</li>
+        <li>Boil the rice until 70% cooked (parboiled), drain water.</li>
+        <li>In a large pot, layer the chicken, rice, fried onions, and mint/coriander leaves.</li>
+        <li>Cover and cook on low heat (dum) for 20-25 minutes.</li>
+        <li>Garnish with fried onions and fresh herbs, and serve with raita or salad.</li>
+      </ol>
+
+      <h3>Nutritional Info (approx.)</h3>
+      <p>Calories: 700 | Protein: 30g | Fat: 35g | Carbs: 70g</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name. Find me on
+      <a href="https://twitter.com" target="_blank">Twitter</a> |
+      <a href="mailto:you@example.com">Email</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript to switch sections -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(sectionId).classList.add("active");
+    }
+  </script>
+</body>
+</html>
+
